@@ -365,13 +365,10 @@ var ReplyWithHeader = {
       let fontSize = this.Prefs.headerFontSize;
       let fontSizeUnit = this.Prefs.headerFontSizeUnit;
       let fontColor = this.Prefs.headerFontColor;
-      rwhlog.debug('Font face: ' + fontFace + '\tFont size: ' + fontSize + fontSizeUnit + '\tColor: ' + fontColor);
+      // rwhlog.debug('Font face: ' + fontFace + '\tFont size: ' + fontSize + fontSizeUnit + '\tColor: ' + fontColor);
 
-      let htmlTagPrefix = '<div style="color:'
-          + fontColor + ' !important; font-size:' + fontSize + fontSizeUnit + ' !important;'
-          + '">';
+      let htmlTagPrefix = '<div style="color:' + fontColor + ' !important;' + '">';
       let htmlTagSuffix = '</div>';
-
 
       // rwhHdr += '<hr id="rwhMsgHdrDivider" style="border:0;border-top:' + lineSize + 'px solid ' + lineColor + ';padding:0;margin:10px 0 5px 0;width:100%;">';
 
