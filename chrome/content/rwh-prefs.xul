@@ -129,11 +129,14 @@
                     <hbox align="center">
                         <label id="lblTypography" value="Header typography" style="margin-top:2px" />
                     </hbox>
+                    <!--
                     <hbox align="center" style="margin-left:30px">
                         <label id="lblFontface" value="Font face:" />
                         <menulist id="hdrFontface" style="width:275px" preference="pref-hdrFontface" />
                     </hbox>
+                    -->
                     <hbox align="center" style="margin-left:30px">
+                    <!--
                         <label id="lblFontsize" value="Font size:" />
                         <menulist id="hdrFontsize" style="width:60px;margin-left:.35em;" preference="pref-hdrFontsize" />
                         <menulist id="hdrFontsizeUnit" style="width:80px;" preference="pref-hdrFontsizeUnit">
@@ -143,6 +146,7 @@
                           </menupopup>
                         </menulist>
                         <spacer width="20px" />
+                     -->
                         <label id="lblFontcolor" value="Color:" />
                         <colorpicker id="hdrFontColor" type="button" value="" style="max-width:35px;"
                                      preference="pref-hdrFontcolor" />
