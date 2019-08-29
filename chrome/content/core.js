@@ -349,11 +349,15 @@ var ReplyWithHeader = {
     let pHeader = this.parseMsgHeader(rawHdr);
     let headerQuotLblSeq = this.Prefs.headerQuotLblSeq;
 
-    var rwhHdr = '<div id="rwhMsgHeader">';
+    let lineColor = this.Prefs.headerSepLineColor;
+    let lineSize = this.Prefs.headerSepLineSize;
+
 
     if (rwhhost.isThunderbird) {
-      rwhHdr += this.createBrTags(this.Prefs.beforeSepSpaceCnt);
+     rwhHdr += this.createBrTags(this.Prefs.beforeSepSpaceCnt);
     }
+
+    var rwhHdr = '<div id="rwhMsgHeader" style="' + 'border:0;border-top:' + lineSize + 'px solid ' + lineColor + ';padding:5px 0 0 0;margin:10px 0 0px 0;width:100%;">';
 
     // for HTML emails
     if (this.isHtmlMail) {
@@ -363,15 +367,13 @@ var ReplyWithHeader = {
       let fontColor = this.Prefs.headerFontColor;
       rwhlog.debug('Font face: ' + fontFace + '\tFont size: ' + fontSize + fontSizeUnit + '\tColor: ' + fontColor);
 
-      let htmlTagPrefix = '<div style="font-family:' + fontFace + ' !important; color:'
-        + fontColor + ' !important; font-size:' + fontSize + fontSizeUnit + ' !important;">';
+      let htmlTagPrefix = '<div style="color:'
+          + fontColor + ' !important; font-size:' + fontSize + fontSizeUnit + ' !important;'
+          + '">';
       let htmlTagSuffix = '</div>';
 
-      let lineColor = this.Prefs.headerSepLineColor;
-      let lineSize = this.Prefs.headerSepLineSize;
-      rwhHdr += '<hr id="rwhMsgHdrDivider" style="border:0;border-top:' + lineSize + 'px solid ' + lineColor + ';padding:0;margin:10px 0 5px 0;width:100%;">';
 
-      rwhHdr += this.createBrTags(this.Prefs.beforeHdrSpaceCnt);
+      // rwhHdr += '<hr id="rwhMsgHdrDivider" style="border:0;border-top:' + lineSize + 'px solid ' + lineColor + ';padding:0;margin:10px 0 5px 0;width:100%;">';
 
       rwhHdr += htmlTagPrefix + '<b>' + i18n.from[locale] + '</b> ' + pHeader.from + htmlTagSuffix;
 
